@@ -1,5 +1,3 @@
-// import Navbar from "@/components/navbar";
-import { StarfieldBackground } from "@/components/starfieldBackground";
 import Clock from "@/components/styleElements/clock";
 import CornerDecoration from "@/components/styleElements/cornerDecoration";
 import Link from "next/link";
@@ -20,12 +18,10 @@ const orbitron = Orbitron({
   subsets: ["latin"],
   weight: "900",
 });
-// import { useEffect } from "react";
-// import { usePathname } from "next/navigation";
 
-export default function Home() {
+export default function Login() {
   return (
-    <main className=" min-h-screen font-sans bg-[url(/images/spacebg.png)] bg-center bg-cover  text-white flex items-center  justify-center  h-screen w-screen relative">
+    <main className=" min-h-screen font-sans bg-[url(/images/spacebg.png)] bg-center bg-cover  text-white flex items-center   h-screen w-screen relative">
       {/* <StarfieldBackground /> */}
       {/* cornor decorations  */}
       <CornerDecoration corner="top-left" />
@@ -63,26 +59,28 @@ export default function Home() {
       </div>
 
       {/* main form */}
-      <div className="relative z-20 py-20 px-10  text-center bg-[#11183f]/70 shadow-xl border border-[#222c61] shadow-[#192253] rounded-2xl">
+      <div className="relative z-20 py-20 px-10 ms-24 text-center bg-[#11183f]/70 shadow-xl border border-[#222c61] shadow-[#192253] rounded-2xl">
         {/* <Navbar /> */}
-
+        <div
+          className={`flex text-sm gap-2 items-center font-extralight text-gray-400 ${spaceMono.className}`}
+        >
+          <span className="bg-[#192250] border-2 rounded-lg border-[#364176] p-2 text-[#4a427d] font-bold">
+            <Rocket size="18px" />
+          </span>{" "}
+          Command Center Access
+        </div>
         <h1
           className={`text-3xl font-extrabold text-purple-800 mb-4 ${orbitron.className}`}
         >
           Operation Liftoff
         </h1>
         <p className="text-zinc-400 mb-4">Phase 1: React Dashboard Active</p>
-        <div className="flex gap-2">
-          <Link href="/login" className="bg-purple-900 py-2 px-4 rounded-full">
-            Go to Login
-          </Link>
-          <Link
-            href="/dashboard"
-            className="bg-purple-900 py-2 px-4 rounded-full"
-          >
-            Go to Dashboard
-          </Link>
-        </div>
+        <Link
+          href="/dashboard"
+          className="bg-purple-900 py-2 px-4 rounded-full"
+        >
+          Go to Dashboard
+        </Link>
       </div>
     </main>
   );

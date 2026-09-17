@@ -10,7 +10,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+   @keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  --animate-blink: blink 2s infinite;
+
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
