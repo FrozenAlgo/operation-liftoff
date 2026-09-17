@@ -229,7 +229,7 @@ export default function PreFLightUI() {
           >
             <div className="h-px w-5 md:w-20 bg-purple-700/50"></div>
             System architecture loading{" "}
-            <LoaderCircle className="animate-spin hidden md:visible text-cyan-200" />
+            <LoaderCircle className="animate-spin hidden md:block text-cyan-200" />
             <div className="h-px w-5 md:w-20 bg-purple-700/50"></div>
           </div>
         </section>
