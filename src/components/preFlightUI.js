@@ -172,10 +172,10 @@ export default function PreFLightUI() {
       <div className="bg-[radial-gradient(circle_at_15%_5%,rgba(34,211,238,0.08),transparent_28%),radial-gradient(circle_at_85%_12%,rgba(168,85,247,0.12),transparent_30%),linear-gradient(180deg,#0a0a16_0%,#0c0c1d_50%,#0a0a16_100%)] min-h-screen bg-fixed w-full">
         {/* top bar  */}
         <div
-          className={`mt-5 text-gray-400 flex uppercase justify-between items-center w-full px-8 text-xs  ${spaceMono.className} pointer-events-none`}
+          className={`mt-5 text-gray-400 md:flex uppercase justify-between items-center w-full px-8 text-[10px] md:text-xs  ${spaceMono.className} pointer-events-none`}
         >
-          <p className="text-cyan-400  flex items-center ">
-            <span className="text-xl leading-none  animate-blink">•</span>
+          <p className="text-cyan-400 mb-3 md:mb-0  flex items-center ">
+            <span className="text-xl leading-none me-1  animate-blink">•</span>
             Live Mission Telemetry
           </p>
 
@@ -199,7 +199,7 @@ export default function PreFLightUI() {
             OPERATION LIFTOFF
           </p>
 
-          <p className="flex items-center text-[12px] gap-2 font-extralight text-gray-500">
+          <p className="md:flex items-center text-[12px] gap-2 hidden  font-extralight text-gray-500">
             <Lock size="16px" /> <span>Authorized Build Channel</span>
           </p>
         </div>
@@ -213,29 +213,29 @@ export default function PreFLightUI() {
             Construction phase active
           </p>
           <h1
-            className={`flex flex-col  uppercase tracking-widest text-7xl filter drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]  ${orbitron.className}`}
+            className={`flex flex-col gap-2 md:gap-0 uppercase tracking-widest text-5xl text-wrap md:text-7xl filter drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]  ${orbitron.className}`}
           >
-            Pre - Flight{" "}
-            <span className="text-cyan-300 filter drop-shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-              Assembly{" "}
+            Pre - Flight
+            <span className="text-cyan-300 text-4xl md:text-7xl filter drop-shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+              Assembly
             </span>
           </h1>
-          <p className="font-mono text-gray-400">
+          <p className="font-mono text-sm md:text-md text-gray-400 mx-2">
             Mission Control OS is currently under active engineering and
             construction.
           </p>
           <div
             className={`flex items-center gap-3 uppercase text-gray-600 text-[12px] ${spaceMono.className}`}
           >
-            <div className="h-px w-20 bg-purple-700/50"></div>
+            <div className="h-px w-5 md:w-20 bg-purple-700/50"></div>
             System architecture loading{" "}
-            <LoaderCircle className="animate-spin text-cyan-200" />
-            <div className="h-px w-20 bg-purple-700/50"></div>
+            <LoaderCircle className="animate-spin hidden md:visible text-cyan-200" />
+            <div className="h-px w-5 md:w-20 bg-purple-700/50"></div>
           </div>
         </section>
 
         <div
-          className={`px-8 mx-8 mt-25 mb-3 flex justify-between items-center uppercase text-[12px] ${spaceMono.className}`}
+          className={`md:px-8 mx-8 mt-25 mb-3 flex justify-between items-center uppercase text-[10px] md:text-[12px] ${spaceMono.className}`}
         >
           <div className={`flex me-8 items-center gap-1 text-gray-300 `}>
             <Terminal size="14px" className="text-cyan-300 animate-blink" />
@@ -249,7 +249,7 @@ export default function PreFLightUI() {
           </div>
         </div>
 
-        <section className=" px-8 ">
+        <section className=" md:px-8 ">
           <div
             className={`border mx-8 border-white/10 px-4 bg-slate-900 rounded-2xl ${spaceMono.className}`}
           >
@@ -263,7 +263,7 @@ export default function PreFLightUI() {
               {bootLogs.map((log) => (
                 <div
                   key={log.label}
-                  className="flex justify-between text-sm my-4 "
+                  className="flex justify-between text-[10px] md:text-sm my-4 "
                 >
                   <div>
                     <span className={`${toneColors[log.tone]} me-3`}>
@@ -274,9 +274,9 @@ export default function PreFLightUI() {
                   <div className={`${toneColors[log.tone]}`}>{log.status}</div>
                 </div>
               ))}
-              <div className="flex items-center text-gray-600 text-sm ">
+              <div className="flex items-center text-gray-600 text-[10px] md:text-sm ">
                 <ChevronRight
-                  className="text-purple-300  -mb-0.5"
+                  className="text-purple-300 me-2 md:me-0  -mb-0.5"
                   size={14}
                   strokeWidth={2}
                 />{" "}
@@ -295,20 +295,24 @@ export default function PreFLightUI() {
             <p className="uppercase text-cyan-300 text-[10px] my-3">
               System blueprint
             </p>
-            <div className="flex justify-between">
-              <h3 className="text-2xl font-bold">Architecture specs</h3>
-              <span className={`text-gray-600 text-sm ${spaceMono.className}`}>
+            <div className="flex items-center justify-between">
+              <h3 className="md:text-2xl md:mb-3 font-bold">
+                Architecture specs
+              </h3>
+              <span
+                className={`text-gray-600 text-[10px] md:text-sm ${spaceMono.className}`}
+              >
                 03 active phases
               </span>
             </div>
           </div>
-          <div>
+          <div className="md:grid lg:grid-cols-3 md:grid-cols-2 md:gap-4">
             {architecturePhases.map((phases, idx) => {
               const Icon = phases.icon;
               return (
                 <div
                   key={idx}
-                  className="border border-gray-500 bg-slate-700/20 hover:border-cyan-300/40 hover:bg-slate-700/30 my-6 p-4 rounded-xl "
+                  className="border border-gray-500 bg-slate-700/20 hover:border-cyan-300/40 hover:bg-slate-700/30 my-6 md:my-0  p-4 rounded-xl "
                 >
                   <div className="flex  justify-between text-xs text-gray-600">
                     <div
@@ -349,7 +353,7 @@ export default function PreFLightUI() {
           className={`mb-2 text-gray-400 py-4 uppercase pointer-events-none   ${spaceMono.className} `}
         >
           <div className="w-full mb-2 h-0.5 bg-linear-to-r from-cyan-500/0 via-cyan-500 to-cyan-500/0"></div>
-          <div className="flex justify-between items-center w-full px-8 text-xs">
+          <div className="md:flex justify-between items-center w-full px-8 text-[10px] md:text-xs">
             <p>DEPLOYEMENT TARGET : 10 / 2026</p>
             <p>Authorized Personnel Only</p>
             <p className="text-purple-700 animate-pulse flex items-center gap-2">
