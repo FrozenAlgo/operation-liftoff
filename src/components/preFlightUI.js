@@ -1,7 +1,6 @@
-import { motion } from "motion/react";
+"use client";
 import Clock from "@/components/styleElements/clock";
-import CornerDecoration from "./styleElements/cornerDecoration";
-import { Michroma, Orbitron, Space_Mono } from "next/font/google";
+import { Orbitron, Space_Mono } from "next/font/google";
 import {
   ChevronRight,
   Lock,
@@ -19,35 +18,8 @@ import {
   LoaderCircle,
 } from "lucide-react";
 
-// const bootLogs = [
-//   {
-//     tone: "cyan",
-//     label: "[CORE]",
-//     text: "Initializing Next.js App Router...",
-//     status: "OK",
-//   },
-//   {
-//     tone: "purple",
-//     label: "[UI]",
-//     text: "Mounting Tailwind Glassmorphism Engine...",
-//     status: "IN PROGRESS",
-//   },
-//   {
-//     tone: "amber",
-//     label: "[DATA]",
-//     text: "Structuring Relational Database State...",
-//     status: "PENDING",
-//   },
-//   {
-//     tone: "muted",
-//     label: "[BACKEND]",
-//     text: "Python API Integration Sequence...",
-//     status: "STANDBY",
-//   },
-// ];
-
 const bootLogs = [
-  // PHASE 1: What you are actively coding
+  // Currently active
   {
     tone: "cyan",
     label: "[CORE]",
@@ -57,47 +29,38 @@ const bootLogs = [
   {
     tone: "purple",
     label: "[UI]",
-    text: "Practicing Tailwind CSS Glassmorphism...",
+    text: "Building glassmorphic dashboard components...",
     status: "IN PROGRESS",
   },
 
-  // PHASE 2: What you are currently figuring out
-  {
-    tone: "amber",
-    label: "[AUTH]",
-    text: "Studying OAuth 2.0 & JWT implementation...",
-    status: "PROTOTYPING",
-  },
+  // Next up
   {
     tone: "amber",
     label: "[DATA]",
-    text: "Exploring Supabase & Postgres integration...",
+    text: "Designing PlanetScale MySQL schema...",
     status: "RESEARCHING",
   },
-
-  // PHASE 3: The Python Curriculum
   {
-    tone: "muted",
+    tone: "amber",
     label: "[BACKEND]",
-    text: "Python FastAPI Backend Training Phase...",
-    status: "QUEUED",
-  },
-  {
-    tone: "muted",
-    label: "[LOGIC]",
-    text: "Learning Data Analytics Algorithm logic...",
+    text: "Python FastAPI + Railway deployment training...",
     status: "QUEUED",
   },
 
-  // PHASE 4: The Mobile Expansion
+  // Later phases
   {
     tone: "muted",
-    label: "[MOBILE]",
-    text: "Flutter Mobile Architecture Review...",
-    status: "FUTURE MODULE",
+    label: "[AI]",
+    text: "Groq integration & structured prompt design...",
+    status: "QUEUED",
+  },
+  {
+    tone: "muted",
+    label: "[AUTH]",
+    text: "Auth.js (Credentials + Google OAuth) planned...",
+    status: "QUEUED",
   },
 ];
-
 const toneColors = {
   cyan: "text-cyan-300",
   purple: "text-purple-300",
@@ -109,54 +72,54 @@ const architecturePhases = [
   {
     phase: "PHASE_01",
     subtitle: "FOUNDATION",
-    title: "Phase 1: React UI Core.",
+    title: "Phase 1: React UI Core",
     icon: Layers,
     tone: "cyan",
-    bullets: ["Next.js App Router", "Tailwind CSS", "Component Architecture"],
+    bullets: [
+      "Next.js App Router",
+      "Tailwind CSS v4",
+      "Component Architecture",
+    ],
   },
   {
     phase: "PHASE_02",
     subtitle: "THE BRAIN",
-    title: "Phase 2: Telemetry AI.",
+    title: "Phase 2: Backend & Data",
     icon: BrainCircuit,
     tone: "purple",
     bullets: [
-      "Python FastAPI Backend",
-      "Local LLM Integration",
-      "MySQL / Supabase",
+      "Python FastAPI on Railway",
+      "PlanetScale MySQL",
+      "Real CRUD endpoints",
     ],
   },
   {
     phase: "PHASE_03",
-    subtitle: "SECURITY & STATE",
-    title: "Phase 3: Auth Validation.",
+    subtitle: "GOAL SYSTEM",
+    title: "Phase 3: Goal Planning UI",
     icon: ShieldCheck,
     tone: "amber",
     bullets: [
-      "OAuth 2.0 Implementation",
-      "JWT Session Management",
-      "Middleware Route Protection",
+      "Goal input forms",
+      "Linked schedule & checklist",
+      "Progress visualization",
     ],
   },
   {
     phase: "PHASE_04",
-    subtitle: "LONG-RANGE",
-    title: "Phase 4: Mobile & IoT.",
+    subtitle: "AI ENGINE",
+    title: "Phase 4: Groq Analysis",
     icon: Smartphone,
     tone: "muted",
     bullets: [
-      "Flutter Cross-Platform (Dart)",
-      "Backend API Consumption",
-      "Hardware Exploration (ESP32)",
+      "Groq structured output",
+      "Approve / Dismiss flow",
+      "One-change-at-a-time rule",
     ],
   },
 ];
-// 1. Initialize your specialty fonts just for this page
 
-const michroma = Michroma({
-  subsets: ["latin"],
-  weight: "400",
-});
+// 1. Initialize your specialty fonts just for this page
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
@@ -166,6 +129,7 @@ const orbitron = Orbitron({
   subsets: ["latin"],
   weight: "700",
 });
+
 export default function PreFLightUI() {
   return (
     <main className="min-h-screen w-full  flex items-center  bg-[#0a0a16] text-slate-100 selection:bg-cyan-400/20 selection:text-cyan-200   relative">
@@ -302,7 +266,7 @@ export default function PreFLightUI() {
               <span
                 className={`text-gray-600 text-[10px] md:text-sm ${spaceMono.className}`}
               >
-                03 active phases
+                {architecturePhases.length} active phases
               </span>
             </div>
           </div>
@@ -354,7 +318,7 @@ export default function PreFLightUI() {
         >
           <div className="w-full mb-2 h-0.5 bg-linear-to-r from-cyan-500/0 via-cyan-500 to-cyan-500/0"></div>
           <div className="md:flex justify-between items-center w-full px-8 text-[10px] md:text-xs">
-            <p>DEPLOYEMENT TARGET : 10 / 2026</p>
+            <p>DEPLOYMENT TARGET : 10 / 2026</p>
             <p>Authorized Personnel Only</p>
             <p className="text-purple-700 animate-pulse flex items-center gap-2">
               <GitBranch size={14} /> SOURCE CHANNEL
