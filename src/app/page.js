@@ -1,5 +1,5 @@
 // import Navbar from "@/components/navbar";
-import { StarfieldBackground } from "@/components/starfieldBackground";
+import { StarfieldBackground } from "@/components/styleElements/starfieldBackground";
 import Clock from "@/components/styleElements/clock";
 import CornerDecoration from "@/components/styleElements/cornerDecoration";
 import Link from "next/link";
@@ -7,10 +7,6 @@ import { Michroma, Orbitron, Space_Mono } from "next/font/google";
 import { Rocket } from "lucide-react";
 
 // 1. Initialize your specialty fonts just for this page
-const michroma = Michroma({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],

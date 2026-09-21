@@ -1,6 +1,5 @@
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Inter } from "next/font/google";
 import PreFlightPage from "./pre-flight/page";
 
 // const geistSans = Geist({
@@ -14,10 +13,7 @@ import PreFlightPage from "./pre-flight/page";
 // });
 
 // Initialize the font
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+
 export const metadata = {
   title: "Operation Liftoff",
   description: "First next app",
@@ -27,7 +23,7 @@ const IS_MAINTENANCE_MODE = true;
 export default function RootLayout({ children }) {
   if (IS_MAINTENANCE_MODE) {
     return (
-      <html lang="en" className={`${inter.className} h-full antialiased`}>
+      <html lang="en" className={` h-full antialiased`}>
         <body className="min-h-full flex flex-col" suppressHydrationWarning>
           <PreFlightPage />
         </body>
@@ -35,7 +31,7 @@ export default function RootLayout({ children }) {
     );
   } else {
     return (
-      <html lang="en" className={`${inter.className} h-full antialiased`}>
+      <html lang="en" className={` h-full antialiased`}>
         <body className="min-h-full flex flex-col" suppressHydrationWarning>
           {children}
         </body>

@@ -166,23 +166,23 @@ export function StarfieldBackground({
         className="pointer-events-none absolute inset-0"
         style={{
           background: `
-      radial-gradient(
-        ellipse 60% 45% at 50% 0%,
-        rgba(91, 33, 182, 0.32) 0%,
-        rgba(76, 29, 149, 0.18) 35%,
-        transparent 70%
-      ),
-      radial-gradient(
-        ellipse 45% 40% at 20% 20%,
-        rgba(124, 58, 237, 0.18) 0%,
-        transparent 70%
-      ),
-      radial-gradient(
-        ellipse 40% 35% at 80% 35%,
-        rgba(88, 28, 135, 0.14) 0%,
-        transparent 70%
-      )
-    `,
+            radial-gradient(
+            ellipse 70% 50% at 50% 0%,
+            rgba(17, 24, 63, 0.6) 0%,
+            rgba(25, 34, 83, 0.3) 40%,
+            transparent 75%
+            ),
+            radial-gradient(
+              ellipse 50% 40% at 15% 25%,
+              rgba(124, 58, 237, 0.15) 0%,
+              transparent 65%
+            ),
+            radial-gradient(
+              ellipse 45% 35% at 85% 30%,
+              rgba(34, 44, 97, 0.28) 0%,
+              transparent 65%
+            )
+          `,
         }}
       />
 

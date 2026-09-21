@@ -1,6 +1,7 @@
 "use client";
 import Clock from "@/components/styleElements/clock";
-import { Orbitron, Space_Mono } from "next/font/google";
+import { spaceMono, orbitron } from "@/lib/fonts";
+
 import {
   ChevronRight,
   Lock,
@@ -121,14 +122,14 @@ const architecturePhases = [
 
 // 1. Initialize your specialty fonts just for this page
 
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: "400",
-});
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  weight: "700",
-});
+// const spaceMono = Space_Mono({
+//   subsets: ["latin"],
+//   weight: "400",
+// });
+// const orbitron = Orbitron({
+//   subsets: ["latin"],
+//   weight: "700",
+// });
 
 export default function PreFLightUI() {
   return (

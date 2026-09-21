@@ -1,12 +1,20 @@
-export default function MetricCard({ icon, title, value, percentage }) {
+import { orbitron } from "@/lib/fonts";
+
+export default function MetricCard({ heading, mainText, subText, icon: Icon }) {
   return (
-    <div className=" bg-[#1d1b21]/70 rounded-3xl p-4 border border-zinc-700 shadow-md shadow-zinc-300/20">
-      <div className="text-zinc-400 font-bold flex justify-between">
-        {title}
-        {icon}
+    <div className="bg-slate-900/80 p-4 rounded-2xl border border-slate-800/80">
+      <div className="flex text-gray-600 items-center justify-between">
+        <h6 className="text-xs uppercase tracking-wider">{heading}</h6>
+        {Icon && <Icon className="text-cyan-700" size={20} />}
       </div>
-      <div>{value}</div>
-      <div>{percentage}</div>
+
+      <h1
+        className={`${orbitron.className} text-4xl md:text-5xl my-3 font-bold`}
+      >
+        {mainText}
+      </h1>
+
+      <p className="text-cyan-700 text-sm">{subText}</p>
     </div>
   );
 }
