@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import MetricCard from "@/components/metricCard";
 import Clock from "@/components/styleElements/clock";
 import TrajectoryChart from "@/components/trajectoryChart";
@@ -82,45 +83,14 @@ export default function DashboardPage() {
   ];
   return (
     <div className={`${spaceMono.className} text-gray-300`}>
-      <header>
-        <div className="flex items-center justify-between px-4  my-2">
-          <h2
-            className={`text-xl tracking-widest font-extrabold ${orbitron.className}`}
-          >
-            OPERATION LIFTOFF
-          </h2>
-          <UserCircle2 className="text-gray-400" />
-        </div>
-        <div
-          className={`my-4 text-gray-400 md:flex uppercase justify-between items-center w-full px-4 text-[10px] md:text-xs   pointer-events-none`}
-        >
-          <p className="text-cyan-400 mb-3 md:mb-0  flex items-center ">
-            <span className="text-xl leading-none me-1  animate-blink">•</span>
-            Live Mission Telemetry
-          </p>
+      <Header
+        heading="Command Center "
+        subHeading="Mission Overview"
+        button={false}
+        buttonText=""
+      />
 
-          <p>
-            MET
-            <span className="mx-1">
-              <Clock />
-            </span>
-            UTC
-            <span className="text-purple-300 ms-2">- PREFLIGHT</span>
-          </p>
-        </div>
-        <div className=" w-full px-4 my-2">
-          <div className="bg-gray-600  h-px  w-full"></div>
-        </div>
-      </header>
       <main className="px-4">
-        {/* page heading   */}
-        <h4 className="text-[16px] uppercase text-cyan-400 pt-4">
-          Mission Overview
-        </h4>
-        <h2 className={`text-4xl uppercase ${orbitron.className} pb-4`}>
-          Command Center
-        </h2>
-
         <div className="grid grid-cols-3 gap-5 uppercase my-4">
           {metricLog.map((metric, idx) => (
             <MetricCard
